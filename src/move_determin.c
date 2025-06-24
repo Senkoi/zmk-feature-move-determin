@@ -4,7 +4,7 @@
 #include <zephyr/device.h>
 #include <drivers/input_processor.h>
 #include <zephyr/logging/log.h>
-#include <zmk/events/mouse_move_state_changed.h>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 LOG_MODULE_DECLARE(zmk,CONFIG_ZMK_LOG_LEVEL);
 
@@ -36,7 +36,11 @@ static int move_determin_handle_event(
         data->passed_threshold = false; // Reset threshold flag
     }
     
-    data->accumulated_movement += abs(event->value); 
+    if (event->value < 0) {
+        data->accumulated_movement -= event->value;
+    } else {
+        data->accumulated_movement += event->value;
+    } 
     if (!data->passed_threshold && data->accumulated_movement >= config->move_threshold) {
         data->passed_threshold = true; // Movement exceeds threshold
     }
