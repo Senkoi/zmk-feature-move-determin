@@ -1,11 +1,8 @@
 manifest:
   remotes:
-    - name: remote-name
-      url-base: https://github.com/remote-name
+    - name: Senkoi
+      url-base: https://github.com/Senkoi
   projects:
-    # Together with the above defined remote, this refers to a module located at
-    # https://github.com/remote-name/repository-name
-    - name: repository-name
-      remote: remote-name
-      # This points to a west manifest file in the remote module for further imports
+    - name: zmk-feature-move-determin
+      remote: Senkoi
       import: west.yml

@@ -1,0 +1,19 @@
+description: Input Processor for Move Deterministic
+
+compatible: "zmk,input-processor-move-determin"
+
+include: ip_zero_param.yaml
+
+properties:
+  move-threshold:
+    type: int
+    description: |
+      The threshold for movement to be considered significant.
+      If the movement is less than this value, it will not trigger an action.
+    requred: true
+  window-ms:
+    type: int
+    description: |
+      The time window in milliseconds during which the movement is considered.
+      If the movement occurs within this time frame, it will be processed.
+    required: true

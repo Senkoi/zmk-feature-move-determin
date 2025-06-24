@@ -1,0 +1,10 @@
+/ {
+    input_processors {
+         move_determin: move_determin {
+            compatible = "zmk,input-processor-move-determin";
+            #input-processor-cells = <0>;
+            window-ms = <200>;
+            move-threshold = <10>;
+         }
+    }
+}
