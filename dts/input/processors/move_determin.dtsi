@@ -5,6 +5,6 @@
             #input-processor-cells = <0>;
             window-ms = <200>;
             move-threshold = <10>;
-         }
-    }
-}
+         };
+    };
+};
