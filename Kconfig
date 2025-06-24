@@ -1,0 +1,8 @@
+# Move Determin Module Configuration
+
+menuconfig MOVE_DETERMIN
+    bool "Move Determin Module"
+    default n
+    help
+      This option enables the Move Determin module, which is used for
+      determining the movement of objects in a simulation environment.
