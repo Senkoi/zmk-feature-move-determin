@@ -67,7 +67,7 @@ static int move_determin_init(const struct device *dev) {
     return 0;
 }
 
-static struct input_processor_driver_api move_determin_driver_api = {
+static struct zmk_input_processor_driver_api move_determin_driver_api = {
     .handle_event = move_determin_handle_event,
 };
 
