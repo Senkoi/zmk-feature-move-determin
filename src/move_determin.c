@@ -11,7 +11,7 @@ LOG_MODULE_DECLARE(zmk,CONFIG_ZMK_LOG_LEVEL);
 struct move_determin_config {
     uint16_t move_threshold;
     uint16_t window_ms;
-}
+};
 
 struct move_determin_data {
     int64_t start_time;
