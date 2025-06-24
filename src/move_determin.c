@@ -2,7 +2,7 @@
 
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
-#include <zephyr/drivers/input_processor.h>
+#include <drivers/input_processor.h>
 #include <zephyr/logging/log.h>
 #include <zmk/events/mouse_move_state_changed.h>
 
