@@ -10,7 +10,7 @@ properties:
     description: |
       The threshold for movement to be considered significant.
       If the movement is less than this value, it will not trigger an action.
-    requred: true
+    required: true
   window-ms:
     type: int
     description: |
