@@ -77,7 +77,7 @@ static struct zmk_input_processor_driver_api move_determin_driver_api = {
         .move_threshold = DT_INST_PROP(inst, move_threshold), \
         .window_ms = DT_INST_PROP(inst, window_ms), \
     }; \
-    INPUT_PROCESSOR_DEVICE_DT_INST_DEFINE(inst, &move_determin_init, NULL, \
+    DEVICE_DT_INST_DEFINE(inst, &move_determin_init, NULL, \
                                           &move_determin_data_##inst, \
                                           &move_determin_config_##inst, \
                                           POST_KERNEL, CONFIG_INPUT_PROCESSOR_INIT_PRIORITY, \
