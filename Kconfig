@@ -6,3 +6,9 @@ menuconfig MOVE_DETERMIN
     help
       This option enables the Move Determin module, which is used for
       determining the movement of objects in a simulation environment.
+
+config ZMK_INPUT_PROCESSOR_TEMP_LAYER_MAX_ACTION_EVENTS
+    int "Temporary Layer Input Processor Max Action Events"
+    default 4
+    depends on MOVE_DETERMIN
+
