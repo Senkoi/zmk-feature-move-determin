@@ -1,0 +1,35 @@
+description: Input Processor for Move Deterministic
+
+compatible: "zmk,input-processor-move-temp-layer"
+
+include: ip_two_param.yaml
+
+properties:
+  move-threshold:
+    type: int
+    description: |
+      The threshold for movement to be considered significant.
+      If the movement is less than this value, it will not trigger an action.
+    required: true
+  window-ms:
+    type: int
+    description: |
+      The time window in milliseconds during which the movement is considered.
+      If the movement occurs within this time frame, it will be processed.
+    required: true
+
+  require-prior-idle-ms:
+    type: int
+    required: false
+    default: 0
+    description: |
+      Required idle (no movement or key activity) time in ms before allowing activation.
+      Prevents accidental or repeated activation.
+
+  excluded-positions:
+    type: array
+    required: false
+    default: []
+    description: |
+      List of position indices (usually key positions) that, when triggered, do not
+      deactivate the temporary layer.

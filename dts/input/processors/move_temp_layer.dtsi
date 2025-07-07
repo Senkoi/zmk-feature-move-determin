@@ -1,0 +1,10 @@
+/ {
+    input_processors {
+        move_temp_layer: move_temp_layer {
+            compatible = "zmk,input-processor-move-temp-layer";
+            #input-processor-cells = <2>;
+            move-threshold = <10>;          // 移动累计值门槛，超过才激活
+            window-ms = <200>;              // 时间窗口，单位毫秒
+        };
+    };
+};
