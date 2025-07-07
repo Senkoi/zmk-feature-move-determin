@@ -38,8 +38,6 @@ struct temp_layer_data {
     struct temp_layer_state state;
 };
 
-K_MSGQ_DEFINE(temp_layer_action_msgq, sizeof(struct layer_state_action),
-              CONFIG_ZMK_INPUT_PROCESSOR_TEMP_LAYER_MAX_ACTION_EVENTS, 4);
 
 /* Static Work Queue Items */
 static struct k_work_delayable layer_disable_works[MAX_LAYERS];
@@ -63,6 +61,8 @@ static void update_layer_state(struct temp_layer_state *state, bool activate) {
         LOG_DBG("Layer %d deactivated", state->toggle_layer);
     }
 }
+K_MSGQ_DEFINE(temp_layer_action_msgq, sizeof(struct layer_state_action),
+              CONFIG_ZMK_INPUT_PROCESSOR_TEMP_LAYER_MAX_ACTION_EVENTS, 4);
 /* Position Search */
 static bool position_is_excluded(const struct temp_layer_config *config, uint32_t position) {
     if (!config->excluded_positions || !config->num_positions) {
