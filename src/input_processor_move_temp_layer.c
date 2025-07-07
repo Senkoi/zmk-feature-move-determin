@@ -297,7 +297,7 @@ static int temp_layer_init(const struct device *dev) {
         k_work_init_delayable(&layer_disable_works[i], layer_disable_callback);
     }
     
-    date->state.move_start_time = 0;
+    data->state.move_start_time = 0;
     data->state.move_accumulated = 0;
     data->state.move_passed = false;
 
