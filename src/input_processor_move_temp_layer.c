@@ -54,10 +54,13 @@ static void update_layer_state(struct temp_layer_state *state, bool activate) {
 
     state->is_active = activate;
     if (activate) {
-        zmk_keymap_layer_activate(state->toggle_layer, false);
+        //zmk_keymap_layer_activate(state->toggle_layer, false);
+        zmk_keymap_layer_activate(state->toggle_layer);
+
         LOG_DBG("Layer %d activated", state->toggle_layer);
     } else {
-        zmk_keymap_layer_deactivate(state->toggle_layer, false);
+        //zmk_keymap_layer_deactivate(state->toggle_layer, false);
+        zmk_keymap_layer_deactivate(state->toggle_layer);
         LOG_DBG("Layer %d deactivated", state->toggle_layer);
     }
 }
